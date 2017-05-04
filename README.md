@@ -17,3 +17,4 @@ After initialization, the program will automaticall start working and boom!
 Extra notes:
 1. I will include the documentation to import an Excel sheet with records into the database.
 2. Please report if any bugs found or if you have any issues in the program.
+3. This program considers that every user will have an unique VC Card No. This is basically the primary key according to which the whole software works. Please make sure that your primary attribute(one that can be used to identify anyone) is filled up in this column.
