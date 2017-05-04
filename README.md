@@ -1,5 +1,5 @@
 # Cable-Operator
-A simple and effective solutions for all the cable vendors to simply replace the 
+A simple and effective solutions for all the cable vendors to simply replace the traditional pen-paper system.
 
 Running:
 This program uses Java at front end and MySQL at the back end. Please make sure you have Java libraries and MySQL Database manager installed. 
