@@ -37,6 +37,7 @@ public class form1 extends javax.swing.JFrame {
     /**
      * Creates new form form1
      */
+    String passwrd="";
     public form1() {
         try
         {
@@ -45,6 +46,7 @@ public class form1 extends javax.swing.JFrame {
             cb3.setVisible(true);
             cb4.setVisible(true);
             cb5.setVisible(true);
+            passwrd=JOptionPane.showInputDialog(null,"Please Enter your MySQL Password\n(Press Enter if no password)");
             DefaultTableModel dm=  (DefaultTableModel)p1t1.getModel();
             TableRowSorter<DefaultTableModel> sorty= new TableRowSorter<DefaultTableModel>(dm);
             p1t1.setRowSorter(sorty);
@@ -1220,7 +1222,7 @@ public class form1 extends javax.swing.JFrame {
             model.setRowCount(0);
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String query="select PckgId,Pname,Pprice from pack;";
@@ -1258,7 +1260,7 @@ public class form1 extends javax.swing.JFrame {
             model.setRowCount(0);
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String price=p4t2.getText();
@@ -1301,7 +1303,7 @@ public class form1 extends javax.swing.JFrame {
             DefaultComboBoxModel model= (DefaultComboBoxModel)cb1.getModel();
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             p3t1.setBorder(null);
@@ -1405,7 +1407,7 @@ public class form1 extends javax.swing.JFrame {
             model.setRowCount(0);
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String query="select cust.Name,balance.balance,pcust.collection_date,PckgID,cust.VC_No,cust.Mob1 from cust,pcust,balance where cust.VC_no=pcust.VC_no and cust.VC_no=balance.VC_no and pcust.active_or_past=1;";
@@ -1433,7 +1435,7 @@ public class form1 extends javax.swing.JFrame {
         try
         {
             Class.forName("java.sql.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             Statement stmt=con.createStatement();
             String vc=p5t1.getText();
             String query="delete from cust where vc_no='"+vc+"';";
@@ -1474,7 +1476,7 @@ public class form1 extends javax.swing.JFrame {
             }
             int amt=Integer.parseInt(p6t2.getText());
             Class.forName("java.sql.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             Statement stmt=con.createStatement();
             
             String query="";
@@ -1550,7 +1552,7 @@ try
             model.setRowCount(0);
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String vc=p7t1.getText();
@@ -1675,7 +1677,7 @@ char c=evt.getKeyChar();
         System.out.println(vc);
         Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
         String query="select VC_no,Name,Mob1,Mob2,Address from cust where vc_no='"+vc+"';";
@@ -1717,7 +1719,7 @@ char c=evt.getKeyChar();
 
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             DefaultTableModel model=( DefaultTableModel)p1t1.getModel();
@@ -1860,7 +1862,7 @@ char c=evt.getKeyChar();
         {
             String vc=p6t1.getText();
             Class.forName("java.sql.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             Statement stmt=con.createStatement();
             String query="select balance from balance where vc_no='"+vc+"';";
             
@@ -1919,7 +1921,7 @@ char c=evt.getKeyChar();
             }
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String vc=p2t1.getText();
@@ -1966,7 +1968,7 @@ char c=evt.getKeyChar();
             int pid= (int) model.getValueAt(index, 0);
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String query="select PckgId,Pname,Pprice from pack where pckgid="+pid+";";
@@ -1994,7 +1996,7 @@ char c=evt.getKeyChar();
             model.setRowCount(0);
              Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String pname=p4t1.getText();
@@ -2125,7 +2127,7 @@ jButton5.setVisible(false);
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
         try
         {
-            String passwrd=JOptionPane.showInputDialog(null,"Please Enter your MySQL Password\n(Press Enter if no password)");
+            passwrd=JOptionPane.showInputDialog(null,"Please Enter your MySQL Password\n(Press Enter if no password)");
             Class.forName("java.sql.Driver");
             System.out.println("class called");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root",""+passwrd);
@@ -2171,7 +2173,7 @@ jButton5.setVisible(false);
             {
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String query="select Pname from pack;";
@@ -2214,7 +2216,7 @@ jButton5.setVisible(false);
             }
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
         String query="select VC_no,Name,Mob1,Mob2,Address from cust where vc_no='"+vc+"';";
@@ -2286,7 +2288,7 @@ jButton5.setVisible(false);
             {
             Class.forName("java.sql.Driver");
             System.out.println("class called");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root","");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/shop","root",""+passwrd);
             System.out.println("Connection created");
             Statement stmt=con.createStatement();
             String query="select Pname from pack;";
