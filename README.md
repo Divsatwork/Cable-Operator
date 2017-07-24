@@ -1,18 +1,18 @@
 # Cable-Operator
-A simple and effective solutions for all the cable vendors to simply replace the traditional pen-paper system.
+Tired of using pen and paper to calculate balances, setting datesheet for collection of payments and finding it hard it to maintain the above stuff? You have come to the right place.
+Cable Operator Manager eases your work and makes you independent of the standard pen and paper methods used.
 
-Running:
-This program uses Java at front end and MySQL at the back end. Please make sure you have Java libraries and MySQL Database manager installed. 
-To run the program,
-1. Download the project as zip.
-2. Extract using any tool.
-3. Browse into the root directory of the project's folder and open terminal/command prompt there.
-4. Iterate to the dist/ folder in your command line window.
-5. Type "java -jar app1.jar" to run the application.
+Requirements:
+1. Java installed (JRE)
+2. MySQL installed (You should know root's password so that the program can do the neccessary work)
 
-Working:
-After running the program for the first time, open the File menu and you will find an option named "Initialize". This is to be run after launching the program for the first time. It will create the tables and the dependencies in the MySQL db.(Please ensure your MySQL runs on the default port and not on any custom port)
-After initialization, the program will automaticall start working and boom!
+To Run:
+1. Open Command Prompt and then browse to the folder's directory.
+2. Then type:
+    java -jar <<filename of the application>>
+3. If you are running the application for the first time, Click on Menu--> Initialize.
+   This will make sure of the backend required for the application to run.
+   Note: It'll prompt you to enter the root's password. This is the MySQL's root password. Leave it blank if you think there was no password set to it.
 
 Extra notes:
 1. I will include the documentation to import an Excel sheet with records into the database.
